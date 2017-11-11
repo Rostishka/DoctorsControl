@@ -21,11 +21,12 @@ namespace TestCore.Controllers
             return View();
         }
 
-        public IActionResult About()
+        [HttpGet]
+        public IActionResult About(int Id)
         {
             ViewData["Message"] = "Your application description page.";
 
-            return View();
+            return View("Index");
         }
 
         public IActionResult Contact()

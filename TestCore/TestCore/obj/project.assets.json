@@ -77,6 +77,9 @@
           "lib/netstandard2.0/CryptoHelper.dll": {}
         }
       },
+      "jQuery/1.8.0": {
+        "type": "package"
+      },
       "Libuv/1.10.0": {
         "type": "package",
         "dependencies": {
@@ -2495,6 +2498,12 @@
         },
         "runtime": {
           "lib/netstandard1.4/Microsoft.IdentityModel.Tokens.dll": {}
+        }
+      },
+      "Microsoft.jQuery.Unobtrusive.Ajax/3.2.3": {
+        "type": "package",
+        "dependencies": {
+          "jQuery": "1.8.0"
         }
       },
       "Microsoft.Net.Http.Headers/2.0.0": {
@@ -5228,6 +5237,22 @@
         "lib/netstandard2.0/CryptoHelper.xml"
       ]
     },
+    "jQuery/1.8.0": {
+      "sha512": "laDFQRJrIRHT0Z0GVYklMt3bE0iu0MZFJwHwg21kt3SHb7Bj8TdNiM3K+ZdK1DzB8ZxKy8z7NkJvwMas+dmHBw==",
+      "type": "package",
+      "path": "jquery/1.8.0",
+      "files": [
+        "Content/Scripts/jquery-1.8.0-vsdoc.js",
+        "Content/Scripts/jquery-1.8.0.js",
+        "Content/Scripts/jquery-1.8.0.min.js",
+        "Tools/common.ps1",
+        "Tools/install.ps1",
+        "Tools/jquery-1.8.0.intellisense.js",
+        "Tools/uninstall.ps1",
+        "jquery.1.8.0.nupkg.sha512",
+        "jquery.nuspec"
+      ]
+    },
     "Libuv/1.10.0": {
       "sha512": "GsCf4q+eyaI49rCPlgYxdxa1SQCysXFFdSJWdstrwxytg4+VPYLYrXD4AT2rjHVJ+UF7SSWX9CapWEYaU4ejVQ==",
       "type": "package",
@@ -7426,6 +7451,17 @@
         "lib/netstandard1.4/Microsoft.IdentityModel.Tokens.xml",
         "microsoft.identitymodel.tokens.5.1.4.nupkg.sha512",
         "microsoft.identitymodel.tokens.nuspec"
+      ]
+    },
+    "Microsoft.jQuery.Unobtrusive.Ajax/3.2.3": {
+      "sha512": "bp8G1m66xaNE9RLm58qk7eXNDlH/yUBc/Dt8dMof/t0hBN3JpUQpPF7pavEVAauPCmcvM90pTrATG8nXbCi9yw==",
+      "type": "package",
+      "path": "microsoft.jquery.unobtrusive.ajax/3.2.3",
+      "files": [
+        "Content/Scripts/jquery.unobtrusive-ajax.js",
+        "Content/Scripts/jquery.unobtrusive-ajax.min.js",
+        "microsoft.jquery.unobtrusive.ajax.3.2.3.nupkg.sha512",
+        "microsoft.jquery.unobtrusive.ajax.nuspec"
       ]
     },
     "Microsoft.Net.Http.Headers/2.0.0": {
@@ -13359,11 +13395,12 @@
       "DAL >= 2.0.0",
       "Microsoft.AspNetCore.All >= 2.0.0",
       "Microsoft.NETCore.App >= 2.0.0",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.0"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.0",
+      "Microsoft.jQuery.Unobtrusive.Ajax >= 3.2.3"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rosti\\.nuget\\packages\\": {},
+    "C:\\Users\\VmpKalin\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -13372,17 +13409,17 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "D:\\Programming\\Hackaton\\DoctorsControl\\TestCore\\TestCore\\TestCore.csproj",
+      "projectUniqueName": "C:\\Users\\VmpKalin\\Documents\\DoctorsControl\\TestCore\\TestCore\\TestCore.csproj",
       "projectName": "TestCore",
-      "projectPath": "D:\\Programming\\Hackaton\\DoctorsControl\\TestCore\\TestCore\\TestCore.csproj",
-      "packagesPath": "C:\\Users\\rosti\\.nuget\\packages\\",
-      "outputPath": "D:\\Programming\\Hackaton\\DoctorsControl\\TestCore\\TestCore\\obj\\",
+      "projectPath": "C:\\Users\\VmpKalin\\Documents\\DoctorsControl\\TestCore\\TestCore\\TestCore.csproj",
+      "packagesPath": "C:\\Users\\VmpKalin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\VmpKalin\\Documents\\DoctorsControl\\TestCore\\TestCore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\rosti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\VmpKalin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13390,14 +13427,13 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://www.myget.org/F/aspnet-contrib/api/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "D:\\Programming\\Hackaton\\DoctorsControl\\TestCore\\DAL\\DAL.csproj": {
-              "projectPath": "D:\\Programming\\Hackaton\\DoctorsControl\\TestCore\\DAL\\DAL.csproj"
+            "C:\\Users\\VmpKalin\\Documents\\DoctorsControl\\TestCore\\DAL\\DAL.csproj": {
+              "projectPath": "C:\\Users\\VmpKalin\\Documents\\DoctorsControl\\TestCore\\DAL\\DAL.csproj"
             }
           }
         }
@@ -13411,6 +13447,10 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
+          "Microsoft.jQuery.Unobtrusive.Ajax": {
+            "target": "Package",
+            "version": "3.2.3"
+          },
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "2.0.0"

@@ -22,4 +22,12 @@ D:\Programming\Hackaton\DoctorsControl\TestCore\DAL\obj\Debug\netstandard2.0\DAL
 D:\Programming\Hackaton\DoctorsControl\TestCore\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfo.cs
 D:\Programming\Hackaton\DoctorsControl\TestCore\DAL\obj\Debug\netstandard2.0\DAL.dll
 D:\Programming\Hackaton\DoctorsControl\TestCore\DAL\obj\Debug\netstandard2.0\DAL.pdb
-D:\Programming\Hackaton\DoctorsControl\TestCore\DAL\obj\Debug\netstandard2.0\DAL.csprojResolveAssemblyReference.cache
+C:\Users\VmpKalin\Documents\DoctorsControl\TestCore\DAL\bin\Debug\netstandard2.0\DAL.deps.json
+C:\Users\VmpKalin\Documents\DoctorsControl\TestCore\DAL\bin\Debug\netstandard2.0\DAL.dll
+C:\Users\VmpKalin\Documents\DoctorsControl\TestCore\DAL\bin\Debug\netstandard2.0\DAL.pdb
+C:\Users\VmpKalin\Documents\DoctorsControl\TestCore\DAL\obj\Debug\netstandard2.0\DAL.csprojResolveAssemblyReference.cache
+C:\Users\VmpKalin\Documents\DoctorsControl\TestCore\DAL\obj\Debug\netstandard2.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\VmpKalin\Documents\DoctorsControl\TestCore\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfoInputs.cache
+C:\Users\VmpKalin\Documents\DoctorsControl\TestCore\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfo.cs
+C:\Users\VmpKalin\Documents\DoctorsControl\TestCore\DAL\obj\Debug\netstandard2.0\DAL.dll
+C:\Users\VmpKalin\Documents\DoctorsControl\TestCore\DAL\obj\Debug\netstandard2.0\DAL.pdb

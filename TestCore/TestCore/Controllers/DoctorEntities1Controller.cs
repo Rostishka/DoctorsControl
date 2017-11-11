@@ -10,24 +10,22 @@ using DAL.Entity;
 
 namespace TestCore.Controllers
 {
-    public class PatientEntitiesController : Controller
+    public class DoctorEntities1Controller : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public PatientEntitiesController(ApplicationDbContext context)
+        public DoctorEntities1Controller(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: PatientEntities
+        // GET: DoctorEntities1
         public async Task<IActionResult> Index()
         {
-
-            ViewBag.list = await _context.Reviews.ToListAsync();
-            return View(await _context.Patients.ToListAsync());
+            return View(await _context.Doctors.ToListAsync());
         }
 
-        // GET: PatientEntities/Details/5
+        // GET: DoctorEntities1/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -35,39 +33,39 @@ namespace TestCore.Controllers
                 return NotFound();
             }
 
-            var patientEntity = await _context.Patients
+            var doctorEntity = await _context.Doctors
                 .SingleOrDefaultAsync(m => m.Id == id);
-            if (patientEntity == null)
+            if (doctorEntity == null)
             {
                 return NotFound();
             }
 
-            return View(patientEntity);
+            return View(doctorEntity);
         }
 
-        // GET: PatientEntities/Create
+        // GET: DoctorEntities1/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: PatientEntities/Create
+        // POST: DoctorEntities1/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,Age,Email,Password")] PatientEntity patientEntity)
+        public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,Age,Email,Password,JobTitle,Information,Location,Procedures")] DoctorEntity doctorEntity)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(patientEntity);
+                _context.Add(doctorEntity);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(patientEntity);
+            return View(doctorEntity);
         }
 
-        // GET: PatientEntities/Edit/5
+        // GET: DoctorEntities1/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -75,22 +73,22 @@ namespace TestCore.Controllers
                 return NotFound();
             }
 
-            var patientEntity = await _context.Patients.SingleOrDefaultAsync(m => m.Id == id);
-            if (patientEntity == null)
+            var doctorEntity = await _context.Doctors.SingleOrDefaultAsync(m => m.Id == id);
+            if (doctorEntity == null)
             {
                 return NotFound();
             }
-            return View(patientEntity);
+            return View(doctorEntity);
         }
 
-        // POST: PatientEntities/Edit/5
+        // POST: DoctorEntities1/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,FirstName,LastName,Age,Email,Password")] PatientEntity patientEntity)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,FirstName,LastName,Age,Email,Password,JobTitle,Information,Location,Procedures")] DoctorEntity doctorEntity)
         {
-            if (id != patientEntity.Id)
+            if (id != doctorEntity.Id)
             {
                 return NotFound();
             }
@@ -99,12 +97,12 @@ namespace TestCore.Controllers
             {
                 try
                 {
-                    _context.Update(patientEntity);
+                    _context.Update(doctorEntity);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PatientEntityExists(patientEntity.Id))
+                    if (!DoctorEntityExists(doctorEntity.Id))
                     {
                         return NotFound();
                     }
@@ -115,10 +113,10 @@ namespace TestCore.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(patientEntity);
+            return View(doctorEntity);
         }
 
-        // GET: PatientEntities/Delete/5
+        // GET: DoctorEntities1/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -126,30 +124,30 @@ namespace TestCore.Controllers
                 return NotFound();
             }
 
-            var patientEntity = await _context.Patients
+            var doctorEntity = await _context.Doctors
                 .SingleOrDefaultAsync(m => m.Id == id);
-            if (patientEntity == null)
+            if (doctorEntity == null)
             {
                 return NotFound();
             }
 
-            return View(patientEntity);
+            return View(doctorEntity);
         }
 
-        // POST: PatientEntities/Delete/5
+        // POST: DoctorEntities1/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var patientEntity = await _context.Patients.SingleOrDefaultAsync(m => m.Id == id);
-            _context.Patients.Remove(patientEntity);
+            var doctorEntity = await _context.Doctors.SingleOrDefaultAsync(m => m.Id == id);
+            _context.Doctors.Remove(doctorEntity);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool PatientEntityExists(int id)
+        private bool DoctorEntityExists(int id)
         {
-            return _context.Patients.Any(e => e.Id == id);
+            return _context.Doctors.Any(e => e.Id == id);
         }
     }
 }
