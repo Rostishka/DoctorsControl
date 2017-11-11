@@ -6859,11 +6859,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "D:\\Programming\\Hackaton\\TestCore\\DAL\\DAL.csproj",
+      "projectUniqueName": "D:\\Programming\\Hackaton\\DoctorsControl\\TestCore\\DAL\\DAL.csproj",
       "projectName": "DAL",
-      "projectPath": "D:\\Programming\\Hackaton\\TestCore\\DAL\\DAL.csproj",
+      "projectPath": "D:\\Programming\\Hackaton\\DoctorsControl\\TestCore\\DAL\\DAL.csproj",
       "packagesPath": "C:\\Users\\rosti\\.nuget\\packages\\",
-      "outputPath": "D:\\Programming\\Hackaton\\TestCore\\DAL\\obj\\",
+      "outputPath": "D:\\Programming\\Hackaton\\DoctorsControl\\TestCore\\DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

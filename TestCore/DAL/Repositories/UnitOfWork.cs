@@ -2,9 +2,7 @@
 using System.Threading.Tasks;
 using AutoMapper;
 using DAL;
-using DAL.Interfaces;
 using DAL.Repositories;
-using DAL.Repositories.Interfaces;
 using IUnitOfWork = DAL.Interfaces.IUnitOfWork;
 
 namespace DataAccessLayer.Repositories
@@ -16,8 +14,6 @@ namespace DataAccessLayer.Repositories
         private AskForFavourRepository _askForFavourRepository;
 
         private FavourRepository _favourRepository;
-
-        private ICustomerRepository _customers;
 
         public IMapper Mapper{ get; set; }
 
@@ -46,18 +42,6 @@ namespace DataAccessLayer.Repositories
                 return _favourRepository ?? new FavourRepository(Context);
             }
         }
-
-        public ICustomerRepository Customers
-        {
-            get
-            {
-                if (_customers == null)
-                    _customers = new CustomerRepository(Context);
-
-                return _customers;
-            }
-        }
-
         public async Task<int> SaveAsync()
         {
             return await Context.SaveChangesAsync();

@@ -12,9 +12,10 @@ using System;
 namespace DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171111194957_Initial2")]
+    partial class Initial2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -28,9 +29,13 @@ namespace DAL.Migrations
 
                     b.Property<string>("Comment");
 
-                    b.Property<int>("DoctorId");
+                    b.Property<string>("DoctorId");
 
-                    b.Property<int>("PatientId");
+                    b.Property<int?>("DoctorId1");
+
+                    b.Property<string>("PatientId");
+
+                    b.Property<int?>("PatientId1");
 
                     b.Property<int>("ReviewStatuse");
 
@@ -38,9 +43,9 @@ namespace DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DoctorId");
+                    b.HasIndex("DoctorId1");
 
-                    b.HasIndex("PatientId");
+                    b.HasIndex("PatientId1");
 
                     b.ToTable("Appointments");
                 });
@@ -156,7 +161,9 @@ namespace DAL.Migrations
 
                     b.Property<string>("PatientEmail");
 
-                    b.Property<int>("PatientId");
+                    b.Property<string>("PatientEntityId");
+
+                    b.Property<int?>("PatientId");
 
                     b.HasKey("Id");
 
@@ -171,13 +178,11 @@ namespace DAL.Migrations
                 {
                     b.HasOne("DAL.Entity.DoctorEntity", "Doctor")
                         .WithMany()
-                        .HasForeignKey("DoctorId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("DoctorId1");
 
                     b.HasOne("DAL.Entity.PatientEntity", "Patient")
                         .WithMany("Apointments")
-                        .HasForeignKey("PatientId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("PatientId1");
                 });
 
             modelBuilder.Entity("DAL.Entity.DoctorEntity", b =>
@@ -209,8 +214,7 @@ namespace DAL.Migrations
 
                     b.HasOne("DAL.Entity.PatientEntity", "Patient")
                         .WithMany("Reviews")
-                        .HasForeignKey("PatientId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("PatientId");
                 });
 #pragma warning restore 612, 618
         }

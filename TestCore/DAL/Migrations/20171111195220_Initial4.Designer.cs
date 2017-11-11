@@ -12,9 +12,10 @@ using System;
 namespace DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171111195220_Initial4")]
+    partial class Initial4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -156,7 +157,9 @@ namespace DAL.Migrations
 
                     b.Property<string>("PatientEmail");
 
-                    b.Property<int>("PatientId");
+                    b.Property<string>("PatientEntityId");
+
+                    b.Property<int?>("PatientId");
 
                     b.HasKey("Id");
 
@@ -209,8 +212,7 @@ namespace DAL.Migrations
 
                     b.HasOne("DAL.Entity.PatientEntity", "Patient")
                         .WithMany("Reviews")
-                        .HasForeignKey("PatientId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("PatientId");
                 });
 #pragma warning restore 612, 618
         }

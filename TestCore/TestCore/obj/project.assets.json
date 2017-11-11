@@ -12790,11 +12790,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "D:\\Programming\\Hackaton\\TestCore\\TestCore\\TestCore.csproj",
+      "projectUniqueName": "D:\\Programming\\Hackaton\\DoctorsControl\\TestCore\\TestCore\\TestCore.csproj",
       "projectName": "TestCore",
-      "projectPath": "D:\\Programming\\Hackaton\\TestCore\\TestCore\\TestCore.csproj",
+      "projectPath": "D:\\Programming\\Hackaton\\DoctorsControl\\TestCore\\TestCore\\TestCore.csproj",
       "packagesPath": "C:\\Users\\rosti\\.nuget\\packages\\",
-      "outputPath": "D:\\Programming\\Hackaton\\TestCore\\TestCore\\obj\\",
+      "outputPath": "D:\\Programming\\Hackaton\\DoctorsControl\\TestCore\\TestCore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12814,8 +12814,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "D:\\Programming\\Hackaton\\TestCore\\DAL\\DAL.csproj": {
-              "projectPath": "D:\\Programming\\Hackaton\\TestCore\\DAL\\DAL.csproj"
+            "D:\\Programming\\Hackaton\\DoctorsControl\\TestCore\\DAL\\DAL.csproj": {
+              "projectPath": "D:\\Programming\\Hackaton\\DoctorsControl\\TestCore\\DAL\\DAL.csproj"
             }
           }
         }

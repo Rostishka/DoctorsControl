@@ -1,9 +1,6 @@
 ﻿using System.Threading.Tasks;
 using AutoMapper;
 using DataAccessLayer.Repositories;
-using DAL;
-using DAL.Repositories;
-using DAL.Repositories.Interfaces;
 
 namespace DAL.Interfaces
 {
@@ -14,7 +11,6 @@ namespace DAL.Interfaces
 
        // AskForFavourRepository AskForFavourRepository { get; }
         FavourRepository FavourRepository { get; }
-        ICustomerRepository Customers { get; }
 
 
         void Dispose();

@@ -11,3 +11,16 @@ D:\Programming\Hackaton\TestCore\TestCore\bin\Debug\netcoreapp2.0\DAL.dll
 D:\Programming\Hackaton\TestCore\TestCore\bin\Debug\netcoreapp2.0\DAL.pdb
 D:\Programming\Hackaton\TestCore\TestCore\obj\Debug\netcoreapp2.0\TestCore.dll
 D:\Programming\Hackaton\TestCore\TestCore\obj\Debug\netcoreapp2.0\TestCore.pdb
+D:\Programming\Hackaton\DoctorsControl\TestCore\TestCore\bin\Debug\netcoreapp2.0\TestCore.deps.json
+D:\Programming\Hackaton\DoctorsControl\TestCore\TestCore\bin\Debug\netcoreapp2.0\TestCore.runtimeconfig.json
+D:\Programming\Hackaton\DoctorsControl\TestCore\TestCore\bin\Debug\netcoreapp2.0\TestCore.runtimeconfig.dev.json
+D:\Programming\Hackaton\DoctorsControl\TestCore\TestCore\bin\Debug\netcoreapp2.0\TestCore.dll
+D:\Programming\Hackaton\DoctorsControl\TestCore\TestCore\bin\Debug\netcoreapp2.0\TestCore.pdb
+D:\Programming\Hackaton\DoctorsControl\TestCore\TestCore\bin\Debug\netcoreapp2.0\DAL.dll
+D:\Programming\Hackaton\DoctorsControl\TestCore\TestCore\bin\Debug\netcoreapp2.0\DAL.pdb
+D:\Programming\Hackaton\DoctorsControl\TestCore\TestCore\obj\Debug\netcoreapp2.0\TestCore.csprojResolveAssemblyReference.cache
+D:\Programming\Hackaton\DoctorsControl\TestCore\TestCore\obj\Debug\netcoreapp2.0\TestCore.csproj.CoreCompileInputs.cache
+D:\Programming\Hackaton\DoctorsControl\TestCore\TestCore\obj\Debug\netcoreapp2.0\TestCore.AssemblyInfoInputs.cache
+D:\Programming\Hackaton\DoctorsControl\TestCore\TestCore\obj\Debug\netcoreapp2.0\TestCore.AssemblyInfo.cs
+D:\Programming\Hackaton\DoctorsControl\TestCore\TestCore\obj\Debug\netcoreapp2.0\TestCore.dll
+D:\Programming\Hackaton\DoctorsControl\TestCore\TestCore\obj\Debug\netcoreapp2.0\TestCore.pdb

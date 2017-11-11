@@ -14,3 +14,11 @@ D:\Programming\Hackaton\TestCore\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfoIn
 D:\Programming\Hackaton\TestCore\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfo.cs
 D:\Programming\Hackaton\TestCore\DAL\obj\Debug\netstandard2.0\DAL.dll
 D:\Programming\Hackaton\TestCore\DAL\obj\Debug\netstandard2.0\DAL.pdb
+D:\Programming\Hackaton\DoctorsControl\TestCore\DAL\bin\Debug\netstandard2.0\DAL.deps.json
+D:\Programming\Hackaton\DoctorsControl\TestCore\DAL\bin\Debug\netstandard2.0\DAL.dll
+D:\Programming\Hackaton\DoctorsControl\TestCore\DAL\bin\Debug\netstandard2.0\DAL.pdb
+D:\Programming\Hackaton\DoctorsControl\TestCore\DAL\obj\Debug\netstandard2.0\DAL.csproj.CoreCompileInputs.cache
+D:\Programming\Hackaton\DoctorsControl\TestCore\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfoInputs.cache
+D:\Programming\Hackaton\DoctorsControl\TestCore\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfo.cs
+D:\Programming\Hackaton\DoctorsControl\TestCore\DAL\obj\Debug\netstandard2.0\DAL.dll
+D:\Programming\Hackaton\DoctorsControl\TestCore\DAL\obj\Debug\netstandard2.0\DAL.pdb
