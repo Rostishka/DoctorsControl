@@ -10,25 +10,23 @@ using DAL.Entity;
 
 namespace TestCore.Controllers
 {
-    public class DoctorEntitiesController : Controller
+    public class ReviewEntitiesController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public DoctorEntitiesController(ApplicationDbContext context)
+        public ReviewEntitiesController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: DoctorEntities
+        // GET: ReviewEntities
         public async Task<IActionResult> Index()
         {
-            //var doc = _context.Doctors.Include(x => x.Reviews).Select(x => x.Reviews);
-            //ViewBag.Data = doc;
-            var doctors = await _context.Doctors.Include(r => r.Reviews).ToListAsync();
-            return View(doctors);
+            var applicationDbContext = _context.Reviews.Include(r => r.Doctor).Include(r => r.Patient);
+            return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: DoctorEntities/Details/5
+        // GET: ReviewEntities/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -36,40 +34,45 @@ namespace TestCore.Controllers
                 return NotFound();
             }
 
-            var doctorEntity = await _context.Doctors
+            var reviewEntity = await _context.Reviews
+                .Include(r => r.Doctor)
+                .Include(r => r.Patient)
                 .SingleOrDefaultAsync(m => m.Id == id);
-            if (doctorEntity == null)
+            if (reviewEntity == null)
             {
                 return NotFound();
             }
 
-            return View(doctorEntity);
+            return View(reviewEntity);
         }
 
-        // GET: DoctorEntities/Create
+        // GET: ReviewEntities/Create
         public IActionResult Create()
         {
+            ViewData["DoctorId"] = new SelectList(_context.Doctors, "Id", "Id");
+            ViewData["PatientId"] = new SelectList(_context.Patients, "Id", "Id");
             return View();
         }
 
-        // POST: DoctorEntities/Create
+        // POST: ReviewEntities/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,Age,Email,Password,JobTitle,Information,Location,Procedures")] DoctorEntity doctorEntity)
+        public async Task<IActionResult> Create([Bind("Id,Mark,Advantage,Disadvantage,Comment,PatientEmail,DoctorId,PatientId")] ReviewEntity reviewEntity)
         {
-
             if (ModelState.IsValid)
             {
-                _context.Add(doctorEntity);
+                _context.Add(reviewEntity);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(doctorEntity);
+            ViewData["DoctorId"] = new SelectList(_context.Doctors, "Id", "Id", reviewEntity.DoctorId);
+            ViewData["PatientId"] = new SelectList(_context.Patients, "Id", "Id", reviewEntity.PatientId);
+            return View(reviewEntity);
         }
 
-        // GET: DoctorEntities/Edit/5
+        // GET: ReviewEntities/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -77,22 +80,24 @@ namespace TestCore.Controllers
                 return NotFound();
             }
 
-            var doctorEntity = await _context.Doctors.SingleOrDefaultAsync(m => m.Id == id);
-            if (doctorEntity == null)
+            var reviewEntity = await _context.Reviews.SingleOrDefaultAsync(m => m.Id == id);
+            if (reviewEntity == null)
             {
                 return NotFound();
             }
-            return View(doctorEntity);
+            ViewData["DoctorId"] = new SelectList(_context.Doctors, "Id", "Id", reviewEntity.DoctorId);
+            ViewData["PatientId"] = new SelectList(_context.Patients, "Id", "Id", reviewEntity.PatientId);
+            return View(reviewEntity);
         }
 
-        // POST: DoctorEntities/Edit/5
+        // POST: ReviewEntities/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,FirstName,LastName,Age,Email,Password,JobTitle,Information,Location,Procedures")] DoctorEntity doctorEntity)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Mark,Advantage,Disadvantage,Comment,PatientEmail,DoctorId,PatientId")] ReviewEntity reviewEntity)
         {
-            if (id != doctorEntity.Id)
+            if (id != reviewEntity.Id)
             {
                 return NotFound();
             }
@@ -101,12 +106,12 @@ namespace TestCore.Controllers
             {
                 try
                 {
-                    _context.Update(doctorEntity);
+                    _context.Update(reviewEntity);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!DoctorEntityExists(doctorEntity.Id))
+                    if (!ReviewEntityExists(reviewEntity.Id))
                     {
                         return NotFound();
                     }
@@ -117,10 +122,12 @@ namespace TestCore.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(doctorEntity);
+            ViewData["DoctorId"] = new SelectList(_context.Doctors, "Id", "Id", reviewEntity.DoctorId);
+            ViewData["PatientId"] = new SelectList(_context.Patients, "Id", "Id", reviewEntity.PatientId);
+            return View(reviewEntity);
         }
 
-        // GET: DoctorEntities/Delete/5
+        // GET: ReviewEntities/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -128,30 +135,32 @@ namespace TestCore.Controllers
                 return NotFound();
             }
 
-            var doctorEntity = await _context.Doctors
+            var reviewEntity = await _context.Reviews
+                .Include(r => r.Doctor)
+                .Include(r => r.Patient)
                 .SingleOrDefaultAsync(m => m.Id == id);
-            if (doctorEntity == null)
+            if (reviewEntity == null)
             {
                 return NotFound();
             }
 
-            return View(doctorEntity);
+            return View(reviewEntity);
         }
 
-        // POST: DoctorEntities/Delete/5
+        // POST: ReviewEntities/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var doctorEntity = await _context.Doctors.SingleOrDefaultAsync(m => m.Id == id);
-            _context.Doctors.Remove(doctorEntity);
+            var reviewEntity = await _context.Reviews.SingleOrDefaultAsync(m => m.Id == id);
+            _context.Reviews.Remove(reviewEntity);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool DoctorEntityExists(int id)
+        private bool ReviewEntityExists(int id)
         {
-            return _context.Doctors.Any(e => e.Id == id);
+            return _context.Reviews.Any(e => e.Id == id);
         }
     }
 }

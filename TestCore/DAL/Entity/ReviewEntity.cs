@@ -15,6 +15,9 @@ namespace DAL.Entity
         public string Comment { get; set; }
         public string PatientEmail { get; set; }
 
+        public DoctorEntity Doctor{ get; set; }
+        public int DoctorId{ get; set; }
+
         public PatientEntity Patient { get; set; }
         public int PatientId { get; set; }
         
