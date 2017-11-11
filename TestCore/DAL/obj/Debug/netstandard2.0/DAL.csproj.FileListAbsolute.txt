@@ -1,0 +1,16 @@
+D:\Programming\Hackaton\Doctors\DoctorsApp\src\DAL\bin\Debug\netstandard2.0\DAL.deps.json
+D:\Programming\Hackaton\Doctors\DoctorsApp\src\DAL\bin\Debug\netstandard2.0\DAL.dll
+D:\Programming\Hackaton\Doctors\DoctorsApp\src\DAL\bin\Debug\netstandard2.0\DAL.pdb
+D:\Programming\Hackaton\Doctors\DoctorsApp\src\DAL\obj\Debug\netstandard2.0\DAL.csproj.CoreCompileInputs.cache
+D:\Programming\Hackaton\Doctors\DoctorsApp\src\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfoInputs.cache
+D:\Programming\Hackaton\Doctors\DoctorsApp\src\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfo.cs
+D:\Programming\Hackaton\Doctors\DoctorsApp\src\DAL\obj\Debug\netstandard2.0\DAL.dll
+D:\Programming\Hackaton\Doctors\DoctorsApp\src\DAL\obj\Debug\netstandard2.0\DAL.pdb
+D:\Programming\Hackaton\TestCore\DAL\bin\Debug\netstandard2.0\DAL.deps.json
+D:\Programming\Hackaton\TestCore\DAL\bin\Debug\netstandard2.0\DAL.dll
+D:\Programming\Hackaton\TestCore\DAL\bin\Debug\netstandard2.0\DAL.pdb
+D:\Programming\Hackaton\TestCore\DAL\obj\Debug\netstandard2.0\DAL.csproj.CoreCompileInputs.cache
+D:\Programming\Hackaton\TestCore\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfoInputs.cache
+D:\Programming\Hackaton\TestCore\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfo.cs
+D:\Programming\Hackaton\TestCore\DAL\obj\Debug\netstandard2.0\DAL.dll
+D:\Programming\Hackaton\TestCore\DAL\obj\Debug\netstandard2.0\DAL.pdb
