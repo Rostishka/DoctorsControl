@@ -28,9 +28,9 @@ namespace DAL.Migrations
 
                     b.Property<string>("Comment");
 
-                    b.Property<int>("DoctorId");
+                    b.Property<string>("DoctorId");
 
-                    b.Property<int>("PatientId");
+                    b.Property<string>("PatientId");
 
                     b.Property<int>("ReviewStatuse");
 
@@ -45,44 +45,10 @@ namespace DAL.Migrations
                     b.ToTable("Appointments");
                 });
 
-            modelBuilder.Entity("DAL.Entity.DoctorEntity", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("Age");
-
-                    b.Property<int?>("CurrentWorkPlaceId");
-
-                    b.Property<string>("Email");
-
-                    b.Property<string>("FirstName");
-
-                    b.Property<string>("Information");
-
-                    b.Property<string>("JobTitle");
-
-                    b.Property<string>("LastName");
-
-                    b.Property<string>("Location");
-
-                    b.Property<string>("Password");
-
-                    b.Property<string>("Procedures");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CurrentWorkPlaceId");
-
-                    b.ToTable("Doctors");
-                });
-
             modelBuilder.Entity("DAL.Entity.EducationEntity", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<int?>("DoctorEntityId");
 
                     b.Property<int>("GraduateYear");
 
@@ -91,8 +57,6 @@ namespace DAL.Migrations
                     b.Property<string>("Speciality");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("DoctorEntityId");
 
                     b.ToTable("Educations");
                 });
@@ -104,8 +68,6 @@ namespace DAL.Migrations
 
                     b.Property<string>("Description");
 
-                    b.Property<int?>("DoctorEntityId");
-
                     b.Property<DateTime?>("EndTime");
 
                     b.Property<string>("Place");
@@ -114,29 +76,7 @@ namespace DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DoctorEntityId");
-
                     b.ToTable("Experiences");
-                });
-
-            modelBuilder.Entity("DAL.Entity.PatientEntity", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("Age");
-
-                    b.Property<string>("Email");
-
-                    b.Property<string>("FirstName");
-
-                    b.Property<string>("LastName");
-
-                    b.Property<string>("Password");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Patients");
                 });
 
             modelBuilder.Entity("DAL.Entity.ReviewEntity", b =>
@@ -146,71 +86,272 @@ namespace DAL.Migrations
 
                     b.Property<string>("Advantage");
 
+                    b.Property<string>("ApplicationUserId");
+
                     b.Property<string>("Comment");
 
                     b.Property<string>("Disadvantage");
-
-                    b.Property<int>("DoctorId");
 
                     b.Property<int>("Mark");
 
                     b.Property<string>("PatientEmail");
 
-                    b.Property<int>("PatientId");
+                    b.Property<string>("PatientId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DoctorId");
+                    b.HasIndex("ApplicationUserId");
 
                     b.HasIndex("PatientId");
 
                     b.ToTable("Reviews");
                 });
 
+            modelBuilder.Entity("DAL.Models.ApplicationUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("AccessFailedCount");
+
+                    b.Property<int>("Age");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken();
+
+                    b.Property<string>("CurrentWorkPlace");
+
+                    b.Property<string>("Educations");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256);
+
+                    b.Property<bool>("EmailConfirmed");
+
+                    b.Property<string>("FirstName");
+
+                    b.Property<string>("Information");
+
+                    b.Property<string>("JobTitle");
+
+                    b.Property<string>("LastName");
+
+                    b.Property<string>("Location");
+
+                    b.Property<bool>("LockoutEnabled");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256);
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256);
+
+                    b.Property<string>("PasswordHash");
+
+                    b.Property<string>("PhoneNumber");
+
+                    b.Property<bool>("PhoneNumberConfirmed");
+
+                    b.Property<string>("PreviousExperience");
+
+                    b.Property<string>("Procedures");
+
+                    b.Property<int>("Role");
+
+                    b.Property<string>("SecurityStamp");
+
+                    b.Property<bool>("TwoFactorEnabled");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256);
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.ToTable("AspNetUsers");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken();
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256);
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256);
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("AspNetRoles");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ClaimType");
+
+                    b.Property<string>("ClaimValue");
+
+                    b.Property<string>("RoleId")
+                        .IsRequired();
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetRoleClaims");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ClaimType");
+
+                    b.Property<string>("ClaimValue");
+
+                    b.Property<string>("UserId")
+                        .IsRequired();
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserClaims");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.Property<string>("LoginProvider");
+
+                    b.Property<string>("ProviderKey");
+
+                    b.Property<string>("ProviderDisplayName");
+
+                    b.Property<string>("UserId")
+                        .IsRequired();
+
+                    b.HasKey("LoginProvider", "ProviderKey");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserLogins");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.Property<string>("UserId");
+
+                    b.Property<string>("RoleId");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetUserRoles");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.Property<string>("UserId");
+
+                    b.Property<string>("LoginProvider");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Value");
+
+                    b.HasKey("UserId", "LoginProvider", "Name");
+
+                    b.ToTable("AspNetUserTokens");
+                });
+
             modelBuilder.Entity("DAL.Entity.AppointmentEntity", b =>
                 {
-                    b.HasOne("DAL.Entity.DoctorEntity", "Doctor")
+                    b.HasOne("DAL.Models.ApplicationUser", "Doctor")
                         .WithMany()
-                        .HasForeignKey("DoctorId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("DoctorId");
 
-                    b.HasOne("DAL.Entity.PatientEntity", "Patient")
-                        .WithMany("Apointments")
-                        .HasForeignKey("PatientId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("DAL.Entity.DoctorEntity", b =>
-                {
-                    b.HasOne("DAL.Entity.ExperienceEntity", "CurrentWorkPlace")
+                    b.HasOne("DAL.Models.ApplicationUser", "Patient")
                         .WithMany()
-                        .HasForeignKey("CurrentWorkPlaceId");
-                });
-
-            modelBuilder.Entity("DAL.Entity.EducationEntity", b =>
-                {
-                    b.HasOne("DAL.Entity.DoctorEntity")
-                        .WithMany("Educations")
-                        .HasForeignKey("DoctorEntityId");
-                });
-
-            modelBuilder.Entity("DAL.Entity.ExperienceEntity", b =>
-                {
-                    b.HasOne("DAL.Entity.DoctorEntity")
-                        .WithMany("PreviousExperience")
-                        .HasForeignKey("DoctorEntityId");
+                        .HasForeignKey("PatientId");
                 });
 
             modelBuilder.Entity("DAL.Entity.ReviewEntity", b =>
                 {
-                    b.HasOne("DAL.Entity.DoctorEntity", "Doctor")
+                    b.HasOne("DAL.Models.ApplicationUser", "ApplicationUser")
                         .WithMany("Reviews")
-                        .HasForeignKey("DoctorId")
+                        .HasForeignKey("ApplicationUserId");
+
+                    b.HasOne("DAL.Models.ApplicationUser", "Patient")
+                        .WithMany()
+                        .HasForeignKey("PatientId");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole")
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.HasOne("DAL.Models.ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.HasOne("DAL.Models.ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole")
+                        .WithMany()
+                        .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("DAL.Entity.PatientEntity", "Patient")
-                        .WithMany("Reviews")
-                        .HasForeignKey("PatientId")
+                    b.HasOne("DAL.Models.ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.HasOne("DAL.Models.ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

@@ -14,7 +14,7 @@ namespace DAL.Repositories
     /// 
     /// </summary>
     /// <typeparam name="TEntity">Create DbSet<TEntity/> that you will work with</typeparam>
-    public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class, IEntity
+    public class BaseRepository<TEntity, TKey> : IBaseRepository<TEntity, TKey> where TEntity : class, IEntity<TKey>
     {
         internal ApplicationDbContext Context;
         internal DbSet<TEntity> DbSet;
@@ -40,7 +40,7 @@ namespace DAL.Repositories
             return DbSet.OptionalInclude(include).Select(x => x);
         }
 
-        public virtual async Task<TEntity> ReadAsync(int id, string include)
+        public virtual async Task<TEntity> ReadAsync(TKey id, string include)
         {
             return await DbSet.OptionalInclude(include).FirstOrDefaultAsync(x => x.Id.Equals(id));
         }
@@ -101,13 +101,15 @@ namespace DAL.Repositories
             return await result;
         }
 
-        public virtual void Update(int id, TEntity entityToUpdate)
+        public virtual void Update(/*TKey id, */TEntity entityToUpdate)
         {
-            DbSet.Attach(entityToUpdate);
+
+            //DbSet.Attach(entityToUpdate);
+
             Context.Entry(entityToUpdate).State = EntityState.Modified;
         }
 
-        public virtual async Task DeleteAsync(int id)
+        public virtual async Task DeleteAsync(TKey id)
         {
             var entityToDelete = await DbSet.FindAsync(id);
 

@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
+using DAL.Models;
 using DAL.Models.Interfaces;
 
 namespace DAL.Entity
 {
-    public class ReviewEntity : IEntity
+    public class ReviewEntity : IEntity<int>
     {
         public int Id { get; set; }
         public int Mark{ get; set; }
@@ -15,11 +16,11 @@ namespace DAL.Entity
         public string Comment { get; set; }
         public string PatientEmail { get; set; }
 
-        public DoctorEntity Doctor{ get; set; }
-        public int DoctorId{ get; set; }
+        public ApplicationUser ApplicationUser{ get; set; }
+        public string ApplicationUserId{ get; set; }
 
-        public PatientEntity Patient { get; set; }
-        public int PatientId { get; set; }
+        public ApplicationUser Patient { get; set; }
+        public string PatientId { get; set; }
         
     }
 }

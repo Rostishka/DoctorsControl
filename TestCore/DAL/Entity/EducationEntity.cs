@@ -5,7 +5,7 @@ using DAL.Models.Interfaces;
 
 namespace DAL.Entity
 {
-    public class EducationEntity : IEntity
+    public class EducationEntity : IEntity<int>
     {
         public int Id { get; set; }
         public string Place{ get; set; }

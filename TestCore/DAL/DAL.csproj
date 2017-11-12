@@ -18,4 +18,9 @@
     <PackageReference Include="OpenIddict.EntityFrameworkCore" Version="2.0.0-rc1-0669" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\AppointmentViewModels\" />
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+
 </Project>

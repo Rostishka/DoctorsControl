@@ -9,9 +9,7 @@ namespace DAL.ViewModels
     {
         public DateTime Time { get; set; }
         public string Comment { get; set; }
-        public DoctorEntity Doctor { get; set; }
-        public int DoctorId { get; set; }
-        public PatientEntity Patient { get; set; }
-        public int PatientId { get; set; }
+        public string DoctorId { get; set; }
+        public string PatientId { get; set; }
     }
 }

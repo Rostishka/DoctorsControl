@@ -1,0 +1,87 @@
+﻿@using DAL.Models.ManageViewModels
+@model DAL.Models.ManageViewModels.IndexViewModel
+@{
+    ViewData["Title"] = "Profile";
+    ViewData.AddActivePage(ManageNavPages.Index);
+}
+
+<h4>@ViewData["Title"]</h4>
+@Html.Partial("_StatusMessage", Model.StatusMessage)
+<div class="row">
+    <div class="col-md-6">
+        <form method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Username"></label>
+                <input asp-for="Username" class="form-control" disabled />
+            </div>
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                @if (Model.IsEmailConfirmed)
+                {
+                    <div class="input-group">
+                        <input asp-for="Email" class="form-control" />
+                        <span class="input-group-addon" aria-hidden="true"><span class="glyphicon glyphicon-ok text-success"></span></span>
+                    </div>
+                }
+                else
+                {
+                    <input asp-for="Email" class="form-control" />
+                    <button asp-action="SendVerificationEmail" class="btn btn-link">Send verification email</button>
+                }
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber"></label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Age"></label>
+                <input asp-for="Age" class="form-control" />
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobTitle"></label>
+                <input asp-for="JobTitle" class="form-control" />
+                <span asp-validation-for="JobTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Information"></label>
+                <input asp-for="Information" class="form-control" />
+                <span asp-validation-for="Information" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Location"></label>
+                <input asp-for="Location" class="form-control" />
+                <span asp-validation-for="Location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CurrentWorkPlace"></label>
+                <input asp-for="CurrentWorkPlace" class="form-control" />
+                <span asp-validation-for="CurrentWorkPlace" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Procedures"></label>
+                <input asp-for="Procedures" class="form-control" />
+                <span asp-validation-for="Procedures" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Educations"></label>
+                <input asp-for="Educations" class="form-control" />
+                <span asp-validation-for="Educations" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PreviousExperience"></label>
+                <input asp-for="PreviousExperience" class="form-control" />
+                <span asp-validation-for="PreviousExperience" class="text-danger"></span>
+            </div>
+            
+            <button type="submit" class="btn btn-default">Save</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

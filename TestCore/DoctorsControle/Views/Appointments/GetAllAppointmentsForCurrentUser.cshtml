@@ -1,0 +1,101 @@
+﻿@using DAL.Entity
+@using DAL.Models
+@model DAL.Models.ResponseModel<IEnumerable<DAL.Entity.AppointmentEntity>>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    #rowMain {
+        border: solid 1px black;
+        width: auto;
+        height: auto;
+    }
+</style>
+
+<h2>Index</h2>
+
+@if (Model.IsDoctor)
+{
+    foreach (var item in Model.Data)
+    {
+        <div class="row" style="background-color: lightgray; border-radius: 10px; width: auto; height: auto;" id="rowMain">
+            <div class="col-lg-2">
+                <img src="https://thecliparts.com/wp-content/uploads/2016/05/doctor-clip-art-free.png" width="150px" height="200px"/>
+            </div>
+            <div class="col-lg-8">
+                <div class="row" style="padding: 10px">
+                    <p style="color: black; font-style: italic; font-size: 25px;">Дата прийому: @item.Time</p>
+                </div>
+                <div class="row" style="padding: 10px">
+                    <p style="color: black; font-style: italic; font-size: 25px;">Пацієнт: @item.Patient.FirstName @item.Patient.LastName</p>
+                </div>
+                <div class="row">
+                    <p style="color: black; font-style: italic; font-size: 15px;">Comment: @item.Comment</p>
+                </div>
+                <div class="row">
+                    <p style="color: black; font-style: italic; font-size: 15px;">Час прийому: @item.Time</p>
+                </div>
+                @if(item.ReviewStatuse == AppointmentStatuse.Waiting){
+                    <p style="color: yellow; font-style: italic; font-size: 15px;">Статус: В режимі очікування</p>
+                } else if(item.ReviewStatuse == AppointmentStatuse.Accepted){
+                    <p style="color: green; font-style: italic; font-size: 15px;">Статус: Одобрено</p>
+                } else if(item.ReviewStatuse == AppointmentStatuse.Rejected){
+                    <p style="color: red; font-style: italic; font-size: 15px;">Статус: Відхилено</p>
+                }
+                @*<div class="row">
+                            <p style="color:black; font-style:italic; font-size:15px;">Розташування: @item.</p>
+                        </div>*@
+                @*<div class="row">
+                            <input type="button" id="CreateAppoint" value="Create">
+                            <a href='/AppointmentEntities/Create'>Go To Create Appointment</a>
+                        </div>*@
+            </div>
+
+        </div>
+        <p></p>
+    }
+}
+else
+{
+    foreach (var item in Model.Data)
+    {
+        <div class="row" style="background-color: lightgray; border-radius: 10px; width: auto; height: auto;" id="rowMain">
+            <div class="col-lg-2">
+                <img src="https://thecliparts.com/wp-content/uploads/2016/05/doctor-clip-art-free.png" width="150px" height="200px"/>
+            </div>
+            <div class="col-lg-8">
+                <div class="row" style="padding: 10px">
+                    <p style="color: black; font-style: italic; font-size: 25px;">Дата прийому: @item.Time</p>
+                </div>
+                <div class="row" style="padding: 10px">
+                    <p style="color: black; font-style: italic; font-size: 25px;">Лікар: @item.Doctor.FirstName @item.Doctor.LastName</p>
+                </div>
+                <div class="row">
+                    @if(item.ReviewStatuse == AppointmentStatuse.Waiting){
+                    <p style="color: yellow; font-style: italic; font-size: 15px;">Статус: В режимі очікування</p>
+                    } else if(item.ReviewStatuse == AppointmentStatuse.Accepted){
+                    <p style="color: green; font-style: italic; font-size: 15px;">Статус: Одобрено</p>
+                    } else if(item.ReviewStatuse == AppointmentStatuse.Rejected){
+                    <p style="color: red; font-style: italic; font-size: 15px;">Статус: Відхилено</p>
+                    }
+                    
+                </div>
+                <div class="row">
+                    <p style="color: black; font-style: italic; font-size: 15px;">Коментпр: @item.Comment</p>
+                </div>
+                @*<div class="row">
+                                <p style="color:black; font-style:italic; font-size:15px;">Розташування: @item.</p>
+                            </div>*@
+                @*<div class="row">
+                                <input type="button" id="CreateAppoint" value="Create">
+                                <a href='/AppointmentEntities/Create'>Go To Create Appointment</a>
+                            </div>*@
+            </div>
+
+        </div>
+        <p></p>
+    }
+}
+
