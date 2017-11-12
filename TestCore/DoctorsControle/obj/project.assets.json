@@ -13364,7 +13364,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rosti\\.nuget\\packages\\": {},
+    "C:\\Users\\VmpKalin\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -13373,17 +13373,17 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "D:\\Programming\\Hackaton\\DoctorsControl\\TestCore\\DoctorsControle\\DoctorsControle.csproj",
+      "projectUniqueName": "C:\\Users\\VmpKalin\\Documents\\DoctorsControl\\TestCore\\DoctorsControle\\DoctorsControle.csproj",
       "projectName": "DoctorsControle",
-      "projectPath": "D:\\Programming\\Hackaton\\DoctorsControl\\TestCore\\DoctorsControle\\DoctorsControle.csproj",
-      "packagesPath": "C:\\Users\\rosti\\.nuget\\packages\\",
-      "outputPath": "D:\\Programming\\Hackaton\\DoctorsControl\\TestCore\\DoctorsControle\\obj\\",
+      "projectPath": "C:\\Users\\VmpKalin\\Documents\\DoctorsControl\\TestCore\\DoctorsControle\\DoctorsControle.csproj",
+      "packagesPath": "C:\\Users\\VmpKalin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\VmpKalin\\Documents\\DoctorsControl\\TestCore\\DoctorsControle\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\rosti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\VmpKalin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13391,14 +13391,13 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://www.myget.org/F/aspnet-contrib/api/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "D:\\Programming\\Hackaton\\DoctorsControl\\TestCore\\DAL\\DAL.csproj": {
-              "projectPath": "D:\\Programming\\Hackaton\\DoctorsControl\\TestCore\\DAL\\DAL.csproj"
+            "C:\\Users\\VmpKalin\\Documents\\DoctorsControl\\TestCore\\DAL\\DAL.csproj": {
+              "projectPath": "C:\\Users\\VmpKalin\\Documents\\DoctorsControl\\TestCore\\DAL\\DAL.csproj"
             }
           }
         }

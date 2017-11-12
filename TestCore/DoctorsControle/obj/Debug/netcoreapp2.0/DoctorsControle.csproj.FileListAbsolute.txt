@@ -12,3 +12,17 @@ D:\Programming\Hackaton\DoctorsControl\TestCore\DoctorsControle\obj\Debug\netcor
 D:\Programming\Hackaton\DoctorsControl\TestCore\DoctorsControle\obj\Debug\netcoreapp2.0\DoctorsControle.pdb
 D:\Programming\Hackaton\DoctorsControl\TestCore\DoctorsControle\bin\Debug\netcoreapp2.0\DAL.dll
 D:\Programming\Hackaton\DoctorsControl\TestCore\DoctorsControle\bin\Debug\netcoreapp2.0\DAL.pdb
+C:\Users\VmpKalin\Documents\DoctorsControl\TestCore\DoctorsControle\bin\Debug\netcoreapp2.0\DoctorsControle.deps.json
+C:\Users\VmpKalin\Documents\DoctorsControl\TestCore\DoctorsControle\bin\Debug\netcoreapp2.0\DoctorsControle.runtimeconfig.json
+C:\Users\VmpKalin\Documents\DoctorsControl\TestCore\DoctorsControle\bin\Debug\netcoreapp2.0\DoctorsControle.runtimeconfig.dev.json
+C:\Users\VmpKalin\Documents\DoctorsControl\TestCore\DoctorsControle\bin\Debug\netcoreapp2.0\DoctorsControle.dll
+C:\Users\VmpKalin\Documents\DoctorsControl\TestCore\DoctorsControle\bin\Debug\netcoreapp2.0\DoctorsControle.pdb
+C:\Users\VmpKalin\Documents\DoctorsControl\TestCore\DoctorsControle\bin\Debug\netcoreapp2.0\DAL.dll
+C:\Users\VmpKalin\Documents\DoctorsControl\TestCore\DoctorsControle\bin\Debug\netcoreapp2.0\DAL.pdb
+C:\Users\VmpKalin\Documents\DoctorsControl\TestCore\DoctorsControle\obj\Debug\netcoreapp2.0\DoctorsControle.csprojResolveAssemblyReference.cache
+C:\Users\VmpKalin\Documents\DoctorsControl\TestCore\DoctorsControle\obj\Debug\netcoreapp2.0\DoctorsControle.csproj.CoreCompileInputs.cache
+C:\Users\VmpKalin\Documents\DoctorsControl\TestCore\DoctorsControle\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\VmpKalin\Documents\DoctorsControl\TestCore\DoctorsControle\obj\Debug\netcoreapp2.0\DoctorsControle.AssemblyInfoInputs.cache
+C:\Users\VmpKalin\Documents\DoctorsControl\TestCore\DoctorsControle\obj\Debug\netcoreapp2.0\DoctorsControle.AssemblyInfo.cs
+C:\Users\VmpKalin\Documents\DoctorsControl\TestCore\DoctorsControle\obj\Debug\netcoreapp2.0\DoctorsControle.dll
+C:\Users\VmpKalin\Documents\DoctorsControl\TestCore\DoctorsControle\obj\Debug\netcoreapp2.0\DoctorsControle.pdb

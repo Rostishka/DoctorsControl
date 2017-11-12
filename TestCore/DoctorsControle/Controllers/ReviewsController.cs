@@ -47,6 +47,8 @@ namespace DoctorsControle.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllReviewsForCurrentUser()
         {
+
+
             var currentUser = await _userManager.FindByEmailAsync(User.Identity.Name);
             //var user = await _context.Users.FindAsync(user.Id);
             var result = _unitOfWork.ReviewsRepository.GetManyAsync(r => r.PatientId.Equals(currentUser.Id), null, nameof(ReviewEntity.ApplicationUser));
@@ -56,9 +58,10 @@ namespace DoctorsControle.Controllers
         [HttpGet]
         public async Task<IActionResult> CreateReview(string Id)
         {
-            var a = await _context.ApplicationUsers.Where(u => u.Role == UserRole.Doctor).FirstOrDefaultAsync();
-            _doctorId = a.Id;
-            return View();
+            var ID = Id;
+            ID = ID.Trim();
+            var a = await _context.ApplicationUsers.Where(u => u.Role == UserRole.Doctor).FirstOrDefaultAsync(x=>x.Id == ID);
+            return Ok();
         }
 
         [HttpPost]
