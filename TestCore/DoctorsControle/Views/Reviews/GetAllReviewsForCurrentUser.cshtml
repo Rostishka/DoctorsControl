@@ -1,0 +1,50 @@
+﻿@using DAL.Models
+@model IEnumerable<DAL.Entity.ReviewEntity>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    #rowMain {
+        border: solid 1px black;
+        width: auto;
+        height: auto;
+    }
+</style>
+
+<h2>Index</h2>
+
+@{
+    foreach (var item in Model)
+    {
+        <div class="row" style="background-color:lightgray; border-radius:10px; width:auto;height:auto;" id="rowMain">
+            <div class="col-lg-2">
+                <img src="https://thecliparts.com/wp-content/uploads/2016/05/doctor-clip-art-free.png" width="150px" height="200px" />
+            </div>
+            <div class="col-lg-8">
+                <div class="row" style="padding:10px">
+                    <p style="color:black; font-style:italic; font-size:25px;">Mark: @item.Mark from user:  @item.PatientEmail</p>
+                </div>
+                <div class="row">
+                    <p style="color:black; font-style:italic; font-size:15px;">Comment: @item.Comment</p>
+                </div>
+                <div class="row">
+                    <p style="color:black; font-style:italic; font-size:15px;">Adventages: @item.Advantage</p>
+                </div>
+                <div class="row">
+                    <p style="color:black; font-style:italic; font-size:15px;">Disadvantages: @item.Disadvantage</p>
+                </div>
+                @*<div class="row">
+                    <p style="color:black; font-style:italic; font-size:15px;">Розташування: @item.</p>
+                </div>*@
+                @*<div class="row">
+                    <input type="button" id="CreateAppoint" value="Create">
+                    <a href='/AppointmentEntities/Create'>Go To Create Appointment</a>
+                </div>*@
+            </div>
+
+        </div>
+        <p></p>
+    }
+}

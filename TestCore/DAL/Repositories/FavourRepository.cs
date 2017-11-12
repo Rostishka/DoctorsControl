@@ -5,7 +5,7 @@ using DAL.Repositories;
 
 namespace DataAccessLayer.Repositories
 {
-    public class FavourRepository : BaseRepository<IEntity>
+    public class FavourRepository : BaseRepository<IEntity<int>, int>
     {
         /// <summary>
         /// Here you create repository that operate your Entity that 
@@ -26,6 +26,7 @@ namespace DataAccessLayer.Repositories
         public override Task DeleteAsync(int id)
         {
             var identificator = id;
+            return base.DeleteAsync(id);
             return base.DeleteAsync(id);
         }
     }

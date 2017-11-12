@@ -28,7 +28,7 @@
                     @Html.DisplayNameFor(model => model.PatientEmail)
                 </th>
             <th>
-                @Html.DisplayNameFor(model => model.Doctor)
+                @Html.DisplayNameFor(model => model.ApplicationUser)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Patient)
@@ -55,7 +55,7 @@
                 @Html.DisplayFor(modelItem => item.PatientEmail)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Doctor.Id)
+                @Html.DisplayFor(modelItem => item.ApplicationUser.Id)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Patient.Id)

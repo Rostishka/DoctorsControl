@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,5 +13,10 @@ namespace DAL.Utils
         {
             return query = include != null ? query.Include(include) : query;
         }
+
+        //public static string GetUserId(this ClaimsPrincipal user)
+        //{
+        //    return user.Identity.Name;
+        //}
     }
 }

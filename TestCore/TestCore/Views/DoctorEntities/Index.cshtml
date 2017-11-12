@@ -44,7 +44,7 @@
         $('#GetData').click(function () {
             $.ajax({
                 type: 'POST',
-                url: '@Url.Action("SendData", "Home")',
+                url: '@Url.Action("Index", "Home")',
                 success: function (data)
                 {
                     $('#result').append(/*data.Name + data.Id*/ "fdfjasdgjagdj");
@@ -80,7 +80,8 @@
                     <p style="color:black; font-style:italic; font-size:15px;">Розташування: @item.Location</p>
                 </div>
                 <div class="row">
-                    <input type="button" id="CreateAppoint" value="Create" >
+                    <input type="button" id="CreateAppoint" value="Create">
+                    <a href='/AppointmentEntities/Create' >asfdsf</a>    
                 </div>
             </div>
 

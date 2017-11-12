@@ -22,7 +22,7 @@ namespace TestCore.Controllers
         // GET: ReviewEntities
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Reviews.Include(r => r.Doctor).Include(r => r.Patient);
+            var applicationDbContext = _context.Reviews.Include(r => r.ApplicationUser).Include(r => r.Patient);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -35,7 +35,7 @@ namespace TestCore.Controllers
             }
 
             var reviewEntity = await _context.Reviews
-                .Include(r => r.Doctor)
+                .Include(r => r.ApplicationUser)
                 .Include(r => r.Patient)
                 .SingleOrDefaultAsync(m => m.Id == id);
             if (reviewEntity == null)
@@ -67,7 +67,7 @@ namespace TestCore.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DoctorId"] = new SelectList(_context.Doctors, "Id", "Id", reviewEntity.DoctorId);
+            ViewData["DoctorId"] = new SelectList(_context.Doctors, "Id", "Id", reviewEntity.ApplicationUserId);
             ViewData["PatientId"] = new SelectList(_context.Patients, "Id", "Id", reviewEntity.PatientId);
             return View(reviewEntity);
         }
@@ -85,7 +85,7 @@ namespace TestCore.Controllers
             {
                 return NotFound();
             }
-            ViewData["DoctorId"] = new SelectList(_context.Doctors, "Id", "Id", reviewEntity.DoctorId);
+            ViewData["DoctorId"] = new SelectList(_context.Doctors, "Id", "Id", reviewEntity.ApplicationUserId);
             ViewData["PatientId"] = new SelectList(_context.Patients, "Id", "Id", reviewEntity.PatientId);
             return View(reviewEntity);
         }
@@ -122,7 +122,7 @@ namespace TestCore.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DoctorId"] = new SelectList(_context.Doctors, "Id", "Id", reviewEntity.DoctorId);
+            ViewData["DoctorId"] = new SelectList(_context.Doctors, "Id", "Id", reviewEntity.ApplicationUserId);
             ViewData["PatientId"] = new SelectList(_context.Patients, "Id", "Id", reviewEntity.PatientId);
             return View(reviewEntity);
         }
@@ -136,7 +136,7 @@ namespace TestCore.Controllers
             }
 
             var reviewEntity = await _context.Reviews
-                .Include(r => r.Doctor)
+                .Include(r => r.ApplicationUser)
                 .Include(r => r.Patient)
                 .SingleOrDefaultAsync(m => m.Id == id);
             if (reviewEntity == null)

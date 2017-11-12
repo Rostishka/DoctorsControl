@@ -1,20 +1,26 @@
 ﻿using System;
 using System.Threading.Tasks;
 using AutoMapper;
+using DataAccessLayer.Repositories;
 using DAL;
 using DAL.Repositories;
 using IUnitOfWork = DAL.Interfaces.IUnitOfWork;
 
-namespace DataAccessLayer.Repositories
+namespace DAL.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {
         public ApplicationDbContext Context { get; set; }// = new MSContext("Server=ROSTIKASUS; Database=MagnisSpaceDB; Integrated Security=True");
 
-        private AskForFavourRepository _askForFavourRepository;
+        //private AskForFavourRepository _askForFavourRepository;
 
-        private FavourRepository _favourRepository;
+        //private FavourRepository _favourRepository;
 
+        private ReviewsRepository _reviewsRepository;
+
+        private UserRepository _userRepository;
+
+        private AppointmentRepository _appointmentRepository;
         public IMapper Mapper{ get; set; }
 
         public UnitOfWork(/*IMapper mapper, */ApplicationDbContext context)
@@ -35,13 +41,38 @@ namespace DataAccessLayer.Repositories
         //    }
         //}
 
-        public FavourRepository FavourRepository
+        //public FavourRepository FavourRepository
+        //{
+        //    get
+        //    {
+        //        return _favourRepository ?? new FavourRepository(Context);
+        //    }
+        //}
+
+        public ReviewsRepository ReviewsRepository
         {
             get
             {
-                return _favourRepository ?? new FavourRepository(Context);
+                return _reviewsRepository ?? new ReviewsRepository(Context);
             }
         }
+
+        public UserRepository UserRepository
+        {
+            get
+            {
+                return _userRepository ?? new UserRepository(Context);
+            }
+        }
+
+        public AppointmentRepository AppointmentRepository
+        {
+            get
+            {
+                return _appointmentRepository ?? new AppointmentRepository(Context);
+            }
+        }
+
         public async Task<int> SaveAsync()
         {
             return await Context.SaveChangesAsync();

@@ -5,7 +5,7 @@ using DAL.Models.Interfaces;
 
 namespace DAL.Entity
 {
-    public class ExperienceEntity : IEntity
+    public class ExperienceEntity : IEntity<int>
     {
         public int Id { get; set; }
 

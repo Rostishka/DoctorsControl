@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DAL;
 using DAL.Entity;
+using DoctorsControle.Data;
 
 namespace TestCore.Controllers
 {
@@ -24,7 +22,7 @@ namespace TestCore.Controllers
         {
             //var doc = _context.Doctors.Include(x => x.Reviews).Select(x => x.Reviews);
             //ViewBag.Data = doc;
-            var doctors = await _context.Doctors.Include(r => r.Reviews).ToListAsync();
+            var doctors = await _context.Users.Include(r => r.Reviews).ToListAsync();
             return View(doctors);
         }
 

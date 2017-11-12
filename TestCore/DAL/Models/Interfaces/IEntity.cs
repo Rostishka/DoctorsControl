@@ -4,8 +4,8 @@ using System.Text;
 
 namespace DAL.Models.Interfaces
 {
-    public interface IEntity
+    public interface IEntity<TKey>
     {
-        int Id { get; set; }
+        TKey Id { get; set; }
     }
 }

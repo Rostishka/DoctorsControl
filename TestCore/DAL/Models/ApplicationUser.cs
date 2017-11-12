@@ -1,58 +1,28 @@
-﻿// ======================================
-// Author: Ebenezer Monney
-// Email:  info@ebenmonney.com
-// Copyright (c) 2017 www.ebenmonney.com
-// 
-// ==> Gun4Hire: contact@ebenmonney.com
-// ======================================
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
+using DAL.Entity;
 using DAL.Models.Interfaces;
+using Microsoft.AspNetCore.Identity;
 
 namespace DAL.Models
 {
-    public class ApplicationUser : IdentityUser, IAuditableEntity
+    // Add profile data for application users by adding properties to the ApplicationUser class
+    public class ApplicationUser : IdentityUser, IEntity<string>
     {
-        public virtual string FriendlyName
-        {
-            get
-            {
-                string friendlyName = string.IsNullOrWhiteSpace(FullName) ? UserName : FullName;
-
-                if (!string.IsNullOrWhiteSpace(JobTitle))
-                    friendlyName = JobTitle + " " + friendlyName;
-
-                return friendlyName;
-            }
-        }
-
-
+        public override string Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int Age { get; set; }
         public string JobTitle { get; set; }
-        public string FullName { get; set; }
-        public string Configuration { get; set; }
-        public bool IsEnabled { get; set; }
-        public bool IsLockedOut => this.LockoutEnabled && this.LockoutEnd >= DateTimeOffset.UtcNow;
-
-        public string CreatedBy { get; set; }
-        public string UpdatedBy { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public DateTime UpdatedDate { get; set; }
-
-
-
-        /// <summary>
-        /// Navigation property for the roles this user belongs to.
-        /// </summary>
-        public virtual ICollection<IdentityUserRole<string>> Roles { get; set; }
-
-        /// <summary>
-        /// Navigation property for the claims this user possesses.
-        /// </summary>
-        public virtual ICollection<IdentityUserClaim<string>> Claims { get; set; }
+        public string Information { get; set; }
+        public string Location { get; set; }
+        public string CurrentWorkPlace { get; set; }
+        public string Procedures { get; set; }
+        public string Educations { get; set; }
+        public string PreviousExperience { get; set; }
+        public ICollection<ReviewEntity> Reviews { get; set; }
+        public UserRole Role { get; set; }
     }
 }

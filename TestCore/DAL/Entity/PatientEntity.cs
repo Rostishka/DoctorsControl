@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace DAL.Entity
 {
-    public class PatientEntity : IEntity
+    public class PatientEntity : IEntity<int>
     {
         public int Id{ get; set; }
         public string FirstName { get; set; }

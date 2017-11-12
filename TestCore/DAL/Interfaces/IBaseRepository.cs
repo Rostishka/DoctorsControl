@@ -7,7 +7,7 @@ using DAL.Models.Interfaces;
 
 namespace DAL.Interfaces
 {
-    public interface IBaseRepository<TEntity> : IDisposable where TEntity : class, IEntity
+    public interface IBaseRepository<TEntity, TKey> : IDisposable where TEntity : class, IEntity<TKey>
     {
         Task CreateAsync(TEntity entity);
 
@@ -15,13 +15,13 @@ namespace DAL.Interfaces
 
         IEnumerable<TEntity> ReadMany(string include = null);
 
-        Task<TEntity> ReadAsync(int id, string include);
+        Task<TEntity> ReadAsync(TKey id, string include);
 
         Task<IEnumerable<TEntity>> FindManyAsync(Func<TEntity, bool> predicate, string include);
 
         Task<TEntity> FindFirstAsync(Func<TEntity, bool> predicate);
 
-        void Update(int id, TEntity entityToUpdate);
+        void Update(/*TKey id, */TEntity entityToUpdate);
 
         IEnumerable<TEntity> GetManyAsync(Expression<Func<TEntity, bool>> filter = null,
                                           Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
@@ -29,7 +29,7 @@ namespace DAL.Interfaces
 
         Task<TEntity> Get(Expression<Func<TEntity, bool>> filter = null, string includeProperties = "");
 
-        Task DeleteAsync(int id);
+        Task DeleteAsync(TKey id);
 
         Task<bool> Exist(Expression<Func<TEntity, bool>> predicate);
 
